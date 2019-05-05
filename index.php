@@ -15,11 +15,14 @@
 			$p = mysqli_fetch_array($dbpass)["password"];
 			// echo $p;
 			if(empty($p)){
-				$error = 4;
+				$error = -1;
 			}
-			else if($p == $password){
-				// $error = "Success";
-				header('location: tasks.php');
+			else if($p === $password){
+				$error = 0;
+				header('location: tasks.php?user='.$username);
+			}
+			else {
+				$error = -1;
 			}
 		}
 	}
@@ -45,8 +48,8 @@
 				if ($error == 3) { 
 					echo "<p style='color: red;'>Password cannot be empty!</p>";
 				} 
-				if ($error == 4) { 
-					echo "<p style='color: red;'>Username does not exist!</p>";
+				if ($error == -1) {
+					echo "<p style='color: red;'>Username and password do not match!</p>";
 				}
 				?>
 				<input name="username" type="text">
