@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
 	$error = 1;
 	if (isset($_POST['submit'])) {
@@ -19,6 +20,7 @@
 			}
 			else if($p === $password){
 				$error = 0;
+				$_SESSION['username'] = $username;
 				header('location: tasks.php?user='.$username);
 			}
 			else {

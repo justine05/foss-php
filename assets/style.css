@@ -16,6 +16,7 @@ body {
 
 input {
 	display: block;
+	text-align: center;
 	margin: 10px auto;
 	background-color: white;
 	border: 1px blue solid;
@@ -41,15 +42,46 @@ button {
 	border-radius: 10px;
 	background-color: silver;
 	transition: 0.2s linear;
-  }
+}
 
- .form-container:hover {
+.form-container:hover {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
- }
+}
 
-  .form {
+.form {
   	position: absolute;
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
-  }
+}
+
+.task-list {
+	position: relative;
+	padding: 10px;
+	height: 80vh;
+	width: 80vw;
+	margin: 10vh auto;
+	border: 1px black solid;
+	border-radius: 10px;
+	background-color: silver;
+	transition: 0.2s linear;
+}
+
+.task-list:hover {
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.task-list table{
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.error-msg {
+	color: red;
+}
+
+.success-msg {
+	color: green;
+}
