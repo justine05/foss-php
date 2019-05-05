@@ -5,15 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
-		<title>Login | To-Do Manager</title>
+		<title>Tasks | To-Do Manager</title>
 	</head>
+
 	<body>
-		<div class="form-container">
-			<form action="login.php" method="POST" class="form">
-				<input name="username" type="text"s>
-				<input name="password" type="password">
-				<button type="submit">Login</button>
-			</form>
-		</div>
+		<h1>TASKS</h1>
 	</body>
 </html>

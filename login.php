@@ -1,10 +1,9 @@
 <?php
 
-    $db = mysqli_connect("localhost","root","","foss_lab");
+    require_once "config.php"    
     $username = $_POST["username"];
     $password = $_POST["password"];
     $dbpass = mysqli_query($db,"SELECT password FROM users WHERE username = '$username' ");
-    
     $p = mysqli_fetch_array($dbpass)["password"];
     echo $p;
 
