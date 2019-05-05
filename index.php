@@ -1,12 +1,12 @@
 <?php
-	$db = mysqli_connect("localhost","user","user123","foss_lab");
-	$error = "";
+	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
+	$error = 1;
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username'])) {
-			$error = "Username canot be empty";
+			$error = 2;
 		}
 		else if (empty($_POST['password'])) {
-			$error = "Password canot be empty";
+			$error = 3;
 		}
 		else {
 			$username = $_POST["username"];
@@ -14,15 +14,15 @@
 			$dbpass = mysqli_query($db,"SELECT password FROM users WHERE username = '$username' ");
 			$p = mysqli_fetch_array($dbpass)["password"];
 			// echo $p;
-			if($p === ""){
-				$error = "Username doesnot exist";
+			if(empty($p)){
+				$error = 4;
 			}
-			else if($p === $password){
-				$error = "Success";
+			else if($p == $password){
+				// $error = "Success";
 				header('location: tasks.php');
 			}
 		}
-		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -38,15 +38,20 @@
 		<h2 style="font-style: 'Hervetica';">ToDo App</h2>
 		<div class="form-container">
 			<form action="index.php" method="POST" class="form">
+				<?php 
+				if ($error == 2) { 
+					echo "<p style='color: red;'>Username cannot be empty!</p>";
+				}
+				if ($error == 3) { 
+					echo "<p style='color: red;'>Password cannot be empty!</p>";
+				} 
+				if ($error == 4) { 
+					echo "<p style='color: red;'>Username does not exist!</p>";
+				}
+				?>
 				<input name="username" type="text">
 				<input name="password" type="password">
-				<button type="submit">Login</button>
-				<?php 
-					if (isset($error)) { ?>
-						<p><?php echo $errors; ?></p>
-				<?php
-					}
-				 ?>
+				<button name="submit" type="submit">Login</button>
 			</form>
 			
 		</div>
