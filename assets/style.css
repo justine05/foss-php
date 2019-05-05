@@ -1,0 +1,55 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+body {
+  	background-color: #dad5d0;
+  	text-align: center;
+}
+
+input {
+	display: block;
+	margin: 10px auto;
+	background-color: white;
+	border: 1px blue solid;
+	border-radius: 5px;
+	color: grey;
+}
+
+input:focus {
+	border: 1px red solid;
+}
+
+button {
+	margin: 10px auto;
+}
+
+.form-container {
+	position: relative;
+	padding: 30px;
+	height: 40vh;
+	width: 40vw;
+	margin: 30vh auto;
+	border: 1px black solid;
+	border-radius: 10px;
+	background-color: silver;
+	transition: 0.2s linear;
+  }
+
+ .form-container:hover {
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+ }
+
+  .form {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  }
