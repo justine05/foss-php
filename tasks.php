@@ -13,6 +13,11 @@
 			$error = 1;
 		}
 	}
+	if (isset($_GET['del_task'])) {
+		$tid = $_GET['del_task'];
+		mysqli_query($db, "UPDATE tasks SET done=1 WHERE tid=".$tid);
+		header('location: tasks.php');
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +29,9 @@
 		<title>Tasks | To-Do Manager</title>
 	</head>
 	<body>
+
+		<a href="logout.php" class="logout">Logout</a>
+
 		<h1><?php echo "Welcome, ".$username; ?></h1>
 		<div class="task-list">
 
@@ -61,18 +69,35 @@
 					<th>Tasks</th>
 					<th>Description</th>
 					<th>Priority</th>
+					<th>&nbsp</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
-				$tasks = mysqli_query($db, "SELECT t.title, t.descr, t.priority, t.done FROM tasks t, users u WHERE t.uid='$uid' AND u.uid=t.uid ORDER BY priority");
+				$tasks = mysqli_query($db, "SELECT t.tid, t.title, t.descr, t.priority, t.done FROM tasks t, users u WHERE t.uid='$uid' AND u.uid=t.uid ORDER BY priority DESC");
 				// echo "SELECT t.title, t.descr, t.priority, t.done FROM tasks t, users u WHERE t.uid='$uid' AND t.uid=u.uid ORDER BY priority";
 				$i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
 				<tr>
-					<td> <?php echo $i; ?> </td>
-					<td class="task"> <?php echo $row['title']; ?> </td>
-					<td><?php echo $row['descr']; ?></td>
-					<td><?php echo $row['priority']; ?></td>
+					<?php
+					$title = $row['title'];
+					$descr = $row['descr'];
+					$priority = $row['priority'];
+					if ($row['done'] == 0) {
+					echo "<td>$i</td>";
+					echo "<td>$title</td>";
+					echo "<td>$descr</td>";
+					echo "<td>$priority</td>";
+					}
+					else {
+					echo "<td class='task-done'>$i</td>";
+					echo "<td class='task-done'>$title</td>";
+					echo "<td class='task-done'>$descr</td>";
+					echo "<td class='task-done'>$priority</td>";
+					}
+					?>
+					<?php if ($row['done'] == 0) { ?>
+						 <td><a href="tasks.php?del_task=<?php echo $row['tid'] ?>">Mark as Done</a></td>
+					<?php } ?>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>

@@ -1,4 +1,11 @@
 <?php
+	
+	if ($_POST['logout'] === true) {
+		session_unset();
+		session_destroy();
+		header('location: index.php');
+	}
+
 	session_start();
 	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
 	$error = 1;
@@ -21,7 +28,7 @@
 			else if($p === $password){
 				$error = 0;
 				$_SESSION['username'] = $username;
-				header('location: tasks.php?user='.$username);
+				header('location: tasks.php');
 			}
 			else {
 				$error = -1;
@@ -54,11 +61,15 @@
 					echo "<p style='color: red;'>Username and password do not match!</p>";
 				}
 				?>
-				<input name="username" type="text">
-				<input name="password" type="password">
+				<label for="username">Username: </label>
+				<input id="username" name="username" type="text">
+				<label for="password">Password: </label>
+				<input id="password" name="password" type="password">
 				<button name="submit" type="submit">Login</button>
+				<br>
+				<p>New here? Click <a href="register.php">here</a> to register.</p>
 			</form>
-			
+
 		</div>
 	</body>
 </html>

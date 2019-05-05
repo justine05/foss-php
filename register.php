@@ -5,7 +5,7 @@
 		if (empty($_POST['username'])) {
 			$error = 2;
 		}
-		else if (empty($_POST['password'])) {
+		else if (empty($_POST['password']) || empty($_POST['reenter'])) {
 			$error = 3;
 		}
 		else {
@@ -15,15 +15,15 @@
 			$dbpass = mysqli_query($db,"SELECT username FROM users WHERE username = '$username' ");
 			$uname = mysqli_fetch_array($dbpass)["username"];
 			// echo $p;
-			if(!empty($p)){
+			if(!empty($uname)){
 				$error = -1;
 			}
 			else if($password != $reenter){
 				$error = -2;
 			}
 			else {
-				mysqli_query($db,"INSERT INTO 'users'('username', 'password') VALUES ('$username','$password')");
-				header('location: login.php');
+				mysqli_query($db,"INSERT INTO users(username, password) VALUES ('$username','$password')");
+				header('location: index.php');
 			}
 		}
 	}
@@ -36,24 +36,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
-		<title>Login | To-Do Manager</title>
+		<title>Register | To-Do Manager</title>
 	</head>
 	<body>
 		<h2 style="font-style: 'Hervetica';">ToDo App</h2>
-		<div class="form-container">
-			<form action="index.php" method="POST" class="form">
+		<div class="form-container register-form-container">
+			<form action="register.php" method="POST" class="register-form">
 				<?php 
 				if ($error == 2) { 
-					echo "<p style='color: red;'>Username cannot be empty!</p>";
+					echo "<p class='error-msg'>Username cannot be empty!</p>";
 				}
 				if ($error == 3) { 
-					echo "<p style='color: red;'>Password cannot be empty!</p>";
+					echo "<p class='error-msg'>Password fields cannot be empty!</p>";
 				} 
 				if ($error == -1) {
-					echo "<p style='color: red;'>Username already exists. Try another username.</p>";
+					echo "<p class='error-msg'>Username already exists. Try another username.</p>";
 				}
 				if ($error == -2) {
-					echo "<p style='color: red;'>Password fields don't match.</p>";
+					echo "<p class='error-msg'>Password fields don't match.</p>";
 				}
 				?>
 				<label for="username">Enter username:</label>
@@ -63,6 +63,8 @@
 				<label for="reenter">Re-enter your password:</label>
 				<input name="reenter" type="password" id="reenter">
 				<button name="submit" type="submit">Register</button>
+				<br>
+				<p>Already have an account? Click <a href="index.php">here</a> to login.</p>
 			</form>
 			
 		</div>
