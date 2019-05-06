@@ -77,7 +77,7 @@
 			</thead>
 			<tbody>
 				<?php
-				$tasks = mysqli_query($db, "SELECT t.tid, t.title, t.descr, t.priority, t.done FROM tasks t, users u WHERE t.uid='$uid' AND u.uid=t.uid ORDER BY priority DESC");
+				$tasks = mysqli_query($db, "SELECT t.tid, t.title, t.descr, t.priority, t.done FROM tasks t, users u WHERE t.uid='$uid' AND u.uid=t.uid ORDER BY priority DESC, done");
 				// echo "SELECT t.title, t.descr, t.priority, t.done FROM tasks t, users u WHERE t.uid='$uid' AND t.uid=u.uid ORDER BY priority";
 				$i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
 				<tr>
@@ -109,6 +109,10 @@
 			</tbody>
 		</table>
 
+		<div class="drop-button-parent">
+			<a href="drop.php"><button class="drop-button">Delete Done Tasks</button></a>
 		</div>
-	</body>
+
+		</div>
+		<body>
 </html>

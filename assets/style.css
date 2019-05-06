@@ -109,7 +109,7 @@ a:hover {
 	width: 100%;
 }
 
-.form-container button {
+button {
 	display: block;
 	padding: 8px 20px;
 	border-radius: 20px;
@@ -239,4 +239,32 @@ a:hover {
 
 .task-list table th {
 	padding-bottom: 25px;
+}
+
+.drop-button-parent {
+	text-align: right;
+	/*position: relative;*/
+	/*bottom: 2%;*/
+	/*width: 100%;*/
+}
+
+.drop-button {
+	position: absolute;
+	bottom: 2%;
+	max-width: 150px;
+	right: 3%%
+	/*transform: translateX(-50%;);*/
+	display: inline-block;
+	margin: 10px auto;
+	border: 3px red solid;
+	color: red;
+	background-color: white;
+	transition: 0.2s ease-in-out;
+}
+
+.drop-button:hover {
+	border: white;
+	background-color: red;
+	color: white;
+	cursor: pointer;
 }
