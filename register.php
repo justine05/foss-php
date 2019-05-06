@@ -1,5 +1,5 @@
 <?php
-	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
+	$db = mysqli_connect("localhost", "root", "", "foss_lab");
 	$error = 1;
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username'])) {
@@ -36,10 +36,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 		<title>Register | To-Do Manager</title>
 	</head>
 	<body>
-		<h2 style="font-style: 'Hervetica';">ToDo App</h2>
+		<header>
+		<h2 style="font-style: 'Hervetica';">The To-Do App</h2>
+		</header>
 		<div class="form-container register-form-container">
 			<form action="register.php" method="POST" class="register-form">
 				<?php 
@@ -57,11 +60,12 @@
 				}
 				?>
 				<label for="username">Enter username:</label>
-				<input name="username" id="username" type="text">
+				<input name="username" id="username" type="text"><br>
 				<label for="password">Enter password:</label>
-				<input name="password" type="password" id="password">
-				<label for="reenter">Re-enter your password:</label>
+				<input name="password" type="password" id="password"><br>
+				<label for="reenter">Re-enter password:</label>
 				<input name="reenter" type="password" id="reenter">
+				<br><br>
 				<button name="submit" type="submit">Register</button>
 				<br>
 				<p>Already have an account? Click <a href="index.php">here</a> to login.</p>

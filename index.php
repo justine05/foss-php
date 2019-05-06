@@ -1,13 +1,14 @@
 <?php
 	
-	if ($_POST['logout'] === true) {
-		session_unset();
-		session_destroy();
-		header('location: index.php');
-	}
+	// if ($_POST['logout'] === true) {
+	// 	session_unset();
+	// 	session_destroy();
+	// 	header('location: index.php');
+	// }
 
 	session_start();
-	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
+	// echo $_SESSION['username'];
+	$db = mysqli_connect("localhost", "root", "", "foss_lab");
 	$error = 1;
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username'])) {
@@ -44,10 +45,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 		<title>Login | To-Do Manager</title>
 	</head>
 	<body>
-		<h2 style="font-style: 'Hervetica';">ToDo App</h2>
+		<header>
+			<h2 style="font-style: 'Hervetica';">The To-Do App</h2>
+		</header>
 		<div class="form-container">
 			<form action="index.php" method="POST" class="form">
 				<?php 
@@ -63,8 +67,9 @@
 				?>
 				<label for="username">Username: </label>
 				<input id="username" name="username" type="text">
+				<br>
 				<label for="password">Password: </label>
-				<input id="password" name="password" type="password">
+				<input id="password" name="password" type="password"><br><br>
 				<button name="submit" type="submit">Login</button>
 				<br>
 				<p>New here? Click <a href="register.php">here</a> to register.</p>

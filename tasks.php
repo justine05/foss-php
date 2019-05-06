@@ -2,8 +2,11 @@
 
 <?php
 	session_start();
-	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
+	$db = mysqli_connect("localhost", "root", "", "foss_lab");
 	$username = $_SESSION['username'];
+	if($username == NULL){
+		header('location: index.php');
+	}
 	$error = 0;
 	if (isset($_POST['submit'])){
 		if(empty($_POST['title'])){
@@ -26,18 +29,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
 		<title>Tasks | To-Do Manager</title>
 	</head>
 	<body>
-
+		<header>
 		<a href="logout.php" class="logout">Logout</a>
 
 		<h1><?php echo "Welcome, ".$username; ?></h1>
+		</header>
 		<div class="task-list">
 
 			<form class='add-task-form' action='tasks.php' method='POST'>
-				<input placeholder="Task Title" type="text" name="title">
-				<input placeholder="Optional Task Description" type="text" name="descr">
+				<input placeholder="Task Title" type="text" name="title"><br>
+				<input placeholder="Optional Task Description" type="text" name="descr"><br>
 				<input placeholder="Priority (0-5)" type="text" name="priority">
 				<button type="submit" name="submit">Add Task</button>
 			</form>
@@ -97,6 +102,9 @@
 					?>
 					<?php if ($row['done'] == 0) { ?>
 						 <td><a href="tasks.php?del_task=<?php echo $row['tid'] ?>">Mark as Done</a></td>
+					<?php } ?>
+					<?php if ($row['done'] != 0) { ?>
+						 <td></td>
 					<?php } ?>
 				</tr>
 				<?php $i++; } ?>
