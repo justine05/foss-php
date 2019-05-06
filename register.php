@@ -1,5 +1,5 @@
 <?php
-	$db = mysqli_connect("localhost", "root", "", "foss_lab");
+	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
 	$error = 1;
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username'])) {

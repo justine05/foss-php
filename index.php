@@ -8,7 +8,7 @@
 
 	session_start();
 	// echo $_SESSION['username'];
-	$db = mysqli_connect("localhost", "root", "", "foss_lab");
+	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
 	$error = 1;
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username'])) {
@@ -56,13 +56,13 @@
 			<form action="index.php" method="POST" class="form">
 				<?php 
 				if ($error == 2) { 
-					echo "<p style='color: red;'>Username cannot be empty!</p>";
+					echo "<p class='error-msg'>Username cannot be empty!</p>";
 				}
 				if ($error == 3) { 
-					echo "<p style='color: red;'>Password cannot be empty!</p>";
+					echo "<p class='error-msg'>Password cannot be empty!</p>";
 				} 
 				if ($error == -1) {
-					echo "<p style='color: red;'>Username and password do not match!</p>";
+					echo "<p class='error-msg'>Username and password do not match!</p>";
 				}
 				?>
 				<label for="username">Username: </label>

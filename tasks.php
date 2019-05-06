@@ -1,8 +1,6 @@
-<!-- INSERT INTO `tasks` (`tid`, `title`, `descr`, `uid`, `priority`, `done`) VALUES (NULL, 'LAMP Login Form', NULL, '2', '3', '0'); -->
-
 <?php
 	session_start();
-	$db = mysqli_connect("localhost", "root", "", "foss_lab");
+	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
 	$username = $_SESSION['username'];
 	if($username == NULL){
 		header('location: index.php');
