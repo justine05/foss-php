@@ -22,7 +22,8 @@
 				$error = -2;
 			}
 			else {
-				mysqli_query($db,"INSERT INTO users(username, password) VALUES ('$username','$password')");
+				$hash = password_hash($password, PASSWORD_DEFAULT);
+				mysqli_query($db,"INSERT INTO users(username, password) VALUES ('$username','$hash')");
 				header('location: index.php');
 			}
 		}

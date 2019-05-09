@@ -79,12 +79,12 @@ button {
 
 a {
 	text-decoration: none;
-	color: #179cf0;
+	color: #03A9F4;
 	transition: 0.2s linear;
 }
 
 a:hover {
-	color: #ff6512;
+	color: #FF5722;
 }
 
 .form-container {

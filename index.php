@@ -1,13 +1,6 @@
 <?php
 	
-	// if ($_POST['logout'] === true) {
-	// 	session_unset();
-	// 	session_destroy();
-	// 	header('location: index.php');
-	// }
-
 	session_start();
-	// echo $_SESSION['username'];
 	$db = mysqli_connect("localhost", "user", "user123", "foss_lab");
 	$error = 1;
 	if (isset($_POST['submit'])) {
@@ -22,11 +15,10 @@
 			$password = $_POST["password"];
 			$dbpass = mysqli_query($db,"SELECT password FROM users WHERE username = '$username' ");
 			$p = mysqli_fetch_array($dbpass)["password"];
-			// echo $p;
 			if(empty($p)){
 				$error = -1;
 			}
-			else if($p === $password){
+			else if (password_verify($password, $p)){
 				$error = 0;
 				$_SESSION['username'] = $username;
 				header('location: tasks.php');
