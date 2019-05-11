@@ -1,0 +1,15 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}% 
+\contentsline {section}{\numberline {1.1}Linux}{3}% 
+\contentsline {section}{\numberline {1.2}Apache HTTP Server}{3}% 
+\contentsline {section}{\numberline {1.3}MySQL}{4}% 
+\contentsline {section}{\numberline {1.4}PHP}{4}% 
+\contentsline {chapter}{\numberline {2}The Database Schema}{5}% 
+\contentsline {chapter}{\numberline {3}The To-Do Application}{6}% 
+\contentsline {section}{\numberline {3.1}Introduction}{6}% 
+\contentsline {section}{\numberline {3.2}index.php}{6}% 
+\contentsline {section}{\numberline {3.3}register.php}{6}% 
+\contentsline {section}{\numberline {3.4}tasks.php}{7}% 
+\contentsline {section}{\numberline {3.5}logout.php}{7}% 
+\contentsline {section}{\numberline {3.6}drop.php}{7}% 
+\contentsline {chapter}{\numberline {4}Conclusion}{8}% 
+\contentsline {chapter}{\numberline {5}References}{9}% 
