@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{	CREATE TABLE tasks (}
+\PYG{x}{			tid int(11) NOT NULL AUTO\PYGZus{}INCREMENT,}
+\PYG{x}{			title varchar(50) NOT NULL,}
+\PYG{x}{			descr varchar(100) DEFAULT NULL,}
+\PYG{x}{			uid int(11) NOT NULL,}
+\PYG{x}{			priority int(11) NOT NULL DEFAULT 3,}
+\PYG{x}{			done tinyint(1) NOT NULL DEFAULT 0,}
+\PYG{x}{			PRIMARY KEY(tid),}
+\PYG{x}{			FOREIGN KEY (uid) REFERENCES users(uid)}
+\PYG{x}{	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;}
+\end{Verbatim}

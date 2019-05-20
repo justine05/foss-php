@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{	CREATE TABLE users (}
+\PYG{x}{			id int(11) NOT NULL AUTO\PYGZus{}INCREMENT,}
+\PYG{x}{			name varchar(30) NOT NULL,}
+\PYG{x}{			password varchar(512) NOT NULL,}
+\PYG{x}{			PRIMARY KEY (id),}
+\PYG{x}{			UNIQUE (username)}
+\PYG{x}{	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;}
+\end{Verbatim}

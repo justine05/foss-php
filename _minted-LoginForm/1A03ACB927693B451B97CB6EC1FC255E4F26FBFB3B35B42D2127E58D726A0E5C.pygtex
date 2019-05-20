@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{\PYGZdl{}dbpass = mysqli\PYGZus{}query(\PYGZdl{}db,\PYGZdq{}SELECT password FROM users WHERE username = \PYGZsq{}\PYGZdl{}username\PYGZsq{} \PYGZdq{});}
+\PYG{x}{\PYGZdl{}p = mysqli\PYGZus{}fetch\PYGZus{}array(\PYGZdl{}dbpass)[\PYGZdq{}password\PYGZdq{}];}
+\PYG{x}{if(empty(\PYGZdl{}p))\PYGZob{}}
+\PYG{x}{	\PYGZdl{}error = \PYGZhy{}1;}
+\PYG{x}{\PYGZcb{}}
+\PYG{x}{else if (password\PYGZus{}verify(\PYGZdl{}password, \PYGZdl{}p))\PYGZob{}}
+\PYG{x}{	\PYGZdl{}error = 0;}
+\PYG{x}{	\PYGZdl{}\PYGZus{}SESSION[\PYGZsq{}username\PYGZsq{}] = \PYGZdl{}username;}
+\PYG{x}{	header(\PYGZsq{}location: tasks.php\PYGZsq{});}
+\PYG{x}{\PYGZcb{}}
+\end{Verbatim}
