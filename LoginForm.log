@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.5.4)  14 MAY 2019 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.5.4)  20 MAY 2019 18:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -419,22 +419,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
 ] [4]
 Chapter 2.
-Runaway argument?
-width=\linewiddth ][assets/schema.png] 
-! Paragraph ended before \Gin@iii was complete.
-<to be read again> 
-                   \par 
-l.65 
-     
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
-
- []
-
+<assets/schema.png, id=21, 595.22375pt x 277.035pt>
+File: assets/schema.png Graphic file (type png)
+<use assets/schema.png>
+Package pdftex.def Info: assets/schema.png  used on input line 64.
+(pdftex.def)             Requested size: 345.0pt x 160.5705pt.
 
 ! LaTeX Error: Illegal character in array arg.
 
@@ -618,14 +607,14 @@ Overfull \hbox (128.91733pt too wide) in paragraph at lines 77--85
 (./_minted-LoginForm/default-pyg-prefix.pygstyle)
 (./_minted-LoginForm/default.pygstyle)
 (./_minted-LoginForm/5B33FA9396103ADC6D73BBE80369E68E4F26FBFB3B35B42D2127E58D72
-6A0E5C.pygtex)
+6A0E5C.pygtex [5
+
+ <./assets/schema.png>])
 \openout3 = `LoginForm.pyg'.
 
 
 (./_minted-LoginForm/8CF0AD347A07913C492523EAFFCC04B64F26FBFB3B35B42D2127E58D72
-6A0E5C.pygtex) [5
-
-]
+6A0E5C.pygtex) [6]
 Chapter 3.
 \openout3 = `LoginForm.pyg'.
 
@@ -636,25 +625,25 @@ Chapter 3.
 
 
 (./_minted-LoginForm/1A03ACB927693B451B97CB6EC1FC255E4F26FBFB3B35B42D2127E58D72
-6A0E5C.pygtex) [6
+6A0E5C.pygtex) [7
 
-] [7]
+] [8]
 Chapter 4.
-[8
+[9
 
 ]
 Chapter 5.
-[9
+[10
 
 ] (./LoginForm.aux)
 runsystem(rm LoginForm.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 6044 strings out of 492616
- 100600 string characters out of 6135178
- 219493 words of memory out of 5000000
- 9837 multiletter control sequences out of 15000+600000
+ 6050 strings out of 492616
+ 100698 string characters out of 6135178
+ 218493 words of memory out of 5000000
+ 9840 multiletter control sequences out of 15000+600000
  8746 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,10n,35p,824b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -666,10 +655,10 @@ cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb>
-Output written on LoginForm.pdf (9 pages, 129347 bytes).
+Output written on LoginForm.pdf (10 pages, 193915 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
